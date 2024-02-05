@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas de Multiplicar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 25px;
+        }
+        select {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            font-size: 1rem;
+            width: 100%;
+        }
+        #multiplicationTable {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 15px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seleccione una tabla de multiplicar</h1>
+    <select id="tableSelector">
+        <option value="0">Tabla del 1</option>
+        <option value="1">Tabla del 2</option>
+        <option value="2">Tabla del 3</option>
+        <option value="3">Tabla del 4</option>
+        <option value="4">Tabla del 5</option>
+        <option value="5">Tabla del 6</option>
+        <option value="6">Tabla del 7</option>
+        <option value="7">Tabla del 8</option>
+        <option value="8">Tabla del 9</option>
+        <option value="9">Tabla del 10</option>
+    </select>
+    <div id="multiplicationTable"></div>
+    <script>
+        const tableSelector = document.getElementById("tableSelector");
+        const multiplicationTable = document.getElementById("multiplicationTable");
+
+        tableSelector.addEventListener("change", () => {
+            const selectedTable = tableSelector.value;
+            multiplicationTable.innerHTML = "";
+            for (let i = 0; i <= 10; i++) {
+                multiplicationTable.innerHTML += `${selectedTable} x ${i} = ${selectedTable * i}<br>`;
+            }
+        });
+    </script>
+</body>
+</html>
